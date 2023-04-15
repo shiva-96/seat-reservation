@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    /* margin-left: 23rem; */
+    margin-top: 2rem;
+}
+
+th {
+    border-width: 1px;
+}
+
+td {
+    border-width: 1px;
+}

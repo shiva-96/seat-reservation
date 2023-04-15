@@ -1,0 +1,10 @@
+<div class="coach">
+    <div class="row" *ngFor="let seat of seats; let i = index">
+        <!-- <div class="seat" [class.reserved]="seat.reserved">{{seat.number}}</div> -->
+        <div class="seats" [ngClass]="{reserved:(seat.reserved) , empty:!(seat.reserved)}">{{seat.number}}</div>
+    </div>
+</div>
+<div class="book-seats">
+    <input [(ngModel)]="seatBooked" placeholder="Number Of Tickets" max="7" min="1" type="number" class="no-of-seats">
+    <button class="reserve-button" (click)="reserveSeats()">Reserve</button>
+</div>

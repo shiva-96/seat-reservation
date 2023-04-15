@@ -1,0 +1,43 @@
+<div *ngFor="let repeate of increaseFields; let i=index" class="container mt-4" style="margin-left: 13rem;">
+  <div class="row" style="flex-wrap: nowrap;">
+    <div class="col-md-2">
+      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="repeate.name">
+    </div>
+    <div class="col-md-2">
+      <input type="text" class="form-control" placeholder="Age" [(ngModel)]="repeate.age">
+    </div>
+    <div class="col-md-2">
+      <input type="text" class="form-control" placeholder="Role" [(ngModel)]="repeate.role">
+    </div>
+
+    <div style="width:15%">
+      <div class="col-md-12 text-center">
+        <button (click)="generateNewContainer()" type="button" class="btn btn-primary mx-2">+</button>
+        <button *ngIf="increaseFields.length>1 " (click)="decreaseContainer(i)" type="button"
+          class="btn btn-secondary">-</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button (click)="submitData()" type="button" class="btn btn-primary mt-3" style="margin-left: 40rem;">SUBMIT</button>
+
+
+<table *ngIf="showTable">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>ROLE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userDataTable of increaseFields">
+      <td>{{userDataTable.name}}</td>
+      <td>{{userDataTable.age}}</td>
+      <td>{{userDataTable.role}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<app-seat-reservation></app-seat-reservation>
+<router-outlet></router-outlet>
